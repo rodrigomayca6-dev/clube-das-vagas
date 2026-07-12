@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube das Vagas Home Office - Trabalhe de Casa Ganhando em Real ou Dolar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0a0f; color: #e4e4e7; line-height: 1.6; }
+    .gradient-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: radial-gradient(ellipse at 20% 50%, #1a1a2e 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, #0f3460 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, #16213e 0%, transparent 50%); }
+    .container { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px 60px; }
+    .header { text-align: center; padding: 48px 0 40px; }
+    .logo { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #22c55e; border: 1px solid rgba(34,197,94,0.3); border-radius: 100px; padding: 8px 20px; }
+    h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 900; line-height: 1.15; margin: 24px 0 16px; background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subhead { font-size: 17px; color: #94a3b8; max-width: 520px; margin: 0 auto; }
+    .urgency { text-align: center; margin-bottom: 32px; }
+    .urgency p { display: inline-block; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #f87171; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+    .card { background: linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.8)); backdrop-filter: blur(20px); border-radius: 20px; padding: 32px; margin-bottom: 20px; border: 1px solid rgba(148,163,184,0.08); }
+    .card-strong { background: linear-gradient(135deg, rgba(34,197,94,0.06), rgba(15,23,42,0.8)); border-color: rgba(34,197,94,0.15); }
+    .card h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #f8fafc; letter-spacing: -0.3px; display: flex; align-items: center; gap: 10px; }
+    .benefits { list-style: none; }
+    .benefits li { padding: 12px 0; border-bottom: 1px solid rgba(148,163,184,0.06); display: flex; align-items: flex-start; gap: 14px; font-size: 15px; }
+    .benefits li:last-child { border: none; }
+    .benefits li .icon { color: #22c55e; font-weight: 700; font-size: 16px; flex-shrink: 0; width: 20px; }
+    .schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .day-slot { background: rgba(15,23,42,0.6); border-radius: 10px; padding: 12px 8px; text-align: center; border: 1px solid rgba(148,163,184,0.06); }
+    .day-slot .d { font-weight: 700; color: #22c55e; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .day-slot .t { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+    .example-box { background: rgba(15,23,42,0.6); border-radius: 12px; padding: 16px 20px; font-size: 13px; line-height: 1.8; border-left: 3px solid #22c55e; font-family: 'SF Mono', 'Fira Code', monospace; }
+    .example-box .tag { display: inline-block; background: rgba(34,197,94,0.1); padding: 2px 8px; border-radius: 4px; font-size: 11px; color: #4ade80; font-weight: 600; margin-bottom: 8px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .test-item { background: rgba(15,23,42,0.6); border-radius: 16px; padding: 20px; border: 1px solid rgba(148,163,184,0.06); }
+    .test-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .test-avatar { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; object-fit: cover; background: #1e293b; }
+    .test-info .name { font-weight: 700; font-size: 14px; color: #f8fafc; }
+    .test-info .city { font-size: 12px; color: #94a3b8; }
+    .test-text { font-size: 14px; color: #cbd5e1; line-height: 1.6; }
+    .test-text .g { color: #4ade80; font-weight: 600; }
+    .price-section { text-align: center; padding: 40px 32px; }
+    .price-label { font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .price { font-size: 56px; font-weight: 900; color: #22c55e; line-height: 1; }
+    .price small { font-size: 20px; font-weight: 500; color: #64748b; }
+    .price-compare { font-size: 14px; color: #64748b; margin: 8px 0 4px; }
+    .price-compare s { color: #ef4444; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #22c55e, #16a34a); color: #052e16; padding: 18px 56px; border-radius: 14px; font-size: 18px; font-weight: 800; text-decoration: none; letter-spacing: -0.3px; transition: all .3s; box-shadow: 0 4px 24px rgba(34,197,94,0.3); margin-top: 20px; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(34,197,94,0.4); }
+    .btn-sub { font-size: 13px; color: #64748b; margin-top: 12px; display: block; }
+    .faq-item { border-bottom: 1px solid rgba(148,163,184,0.06); padding: 16px 0; }
+    .faq-item:last-child { border: none; }
+    .faq-item .q { font-weight: 600; font-size: 15px; color: #f8fafc; margin-bottom: 6px; }
+    .faq-item .a { font-size: 14px; color: #94a3b8; }
+    .footer { text-align: center; font-size: 12px; color: #475569; padding: 32px 0; margin-top: 40px; border-top: 1px solid rgba(148,163,184,0.06); }
+    .footer a { color: #64748b; text-decoration: underline; }
+    @media (max-width: 480px) { .card { padding: 24px 20px; } .schedule-grid { grid-template-columns: repeat(2, 1fr); } .testimonial-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="gradient-bg"></div>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Clube das Vagas Home Office</div>
+      <h1>Toda semana voce recebe <em>vagas home office reais</em> no seu Telegram.<br>Para trabalhar do Brasil <em>ganhando em real ou em dolar.</em></h1>
+      <p class="subhead">Enquanto 99% das pessoas ainda estao perdendo tempo enviando curriculo no LinkedIn, os nossos assinantes ja estao recebendo vagas 100% home office direto no celular. Brasil e exterior. CLT, PJ e Freelancer. <strong>Toda semana, sem falta.</strong></p>
+    </div>
+
+    <div class="urgency">
+      <p>Ultimos dias com preco de lancamento - R$ 19,90</p>
+    </div>
+
+    <div class="card card-strong">
+      <h2>O que voce ganha entrando agora</h2>
+      <ul class="benefits">
+        <li><span class="icon">V</span> <strong>Vagas Brasil toda segunda, quarta e sexta</strong> - CLT e PJ 100% home office</li>
+        <li><span class="icon">V</span> <strong>Vagas internacionais em dolar toda terca e quinta</strong> - trabalhe para fora sem sair de casa</li>
+        <li><span class="icon">V</span> <strong>Vagas relampago</strong> - oportunidades urgentes qualquer dia</li>
+        <li><span class="icon">V</span> <strong>Link direto pra candidatura</strong> - LinkedIn, Gupy, sites das empresas</li>
+        <li><span class="icon">V</span> <strong>Tutoriais em video</strong> - mostrando como se cadastrar em cada plataforma</li>
+        <li><span class="icon">V</span> <strong>Cronograma fixo</strong> - voce sabe exatamente quando esperar cada vaga</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Cronograma da semana</h2>
+      <div class="schedule-grid">
+        <div class="day-slot"><div class="d">Seg</div><div class="t">Vaga Brasil</div></div>
+        <div class="day-slot"><div class="d">Ter</div><div class="t">Vaga em Dolar</div></div>
+        <div class="day-slot"><div class="d">Qua</div><div class="t">Vaga Brasil</div></div>
+        <div class="day-slot"><div class="d">Qui</div><div class="t">Vaga em Dolar</div></div>
+        <div class="day-slot"><div class="d">Sex</div><div class="t">Vaga Brasil</div></div>
+        <div class="day-slot"><div class="d">Fim de Sem</div><div class="t">Relampago</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Exemplo real do que chega no seu Telegram</h2>
+      <div class="example-box">
+        <div class="tag">VAGA DE HOJE</div>
+        VAGA - Analista de Atendimento | VExpenses<br>
+        Empresa: VExpenses (startup)<br>
+        Modelo: 100% Home Office / Efetivo<br>
+        Requisitos: Experiencia em atendimento<br>
+        Candidate-se: workei.com.br/vaga<br>
+        Apenas divulgamos a vaga. Nao somos contratantes.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span style="font-size:22px;">Pessoas reais que mudaram de vida</span></h2>
+      <div class="testimonial-grid">
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Monique">
+            <div class="test-info">
+              <div class="name">Monique Lima</div>
+              <div class="city">Sao Paulo - SP, 32 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Fiz o cadastro e abriram oportunidades em dolar. Em 2 meses consegui US$ 2.000/mes como freelancer de traducao. Surreal demais!"</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana">
+            <div class="test-info">
+              <div class="name">Ana Silva</div>
+              <div class="city">Belo Horizonte - MG, 29 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Estava entregando curriculo quando encontrei o clubinho. No primeiro mes ja passei em duas vagas e fui contratada numa empresa que paga em dolar."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Carlos">
+            <div class="test-info">
+              <div class="name">Carlos Santos</div>
+              <div class="city">Recife - PE, 45 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Por mais de 10 anos em codigos de roupa, decidi querer trabalhar de casa. Entrei na primeira semana e estou fazendo transicao. Hoje trabalho em companhia de tecnologia ganhando mais que antes."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jessica">
+            <div class="test-info">
+              <div class="name">Jessica Farias Lima</div>
+              <div class="city">Salvador - BA, 26 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Tava desempregada a 4 meses, meu dinheiro acabando. Ai veio uma vaga de suporte na Softplan pelo clube. Salario R$ 2.505 + beneficios, 100% home office. Minha vida mudou completamente."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Pedro">
+            <div class="test-info">
+              <div class="name">Pedro Rocha</div>
+              <div class="city">Curitiba - PR, 38 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Sou dev e achava que nao precisava. Mas as vagas em dolar do clube sao de outro nivel. Consegui um contrato de US$ 4.500/mes com uma startup dos EUA. Melhor investimento do ano."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/women/11.jpg" alt="Fernanda">
+            <div class="test-info">
+              <div class="name">Fernanda Oliveira</div>
+              <div class="city">Brasilia - DF, 34 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Mae de dois filhos, precisava de algo home office pra cuidar deles. As vagas do clube sao todas verificadas. Entrei como analista financeiro na Brasil TecPar. Poder trabalhar de casa e tudo."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/men/33.jpg" alt="Rafael">
+            <div class="test-info">
+              <div class="name">Rafael Martins</div>
+              <div class="city">Porto Alegre - RS, 41 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Perdi meu emprego na pandemia e nunca mais quis voltar a escritorio. O clube me mostrou que existe vida alem do LinkedIn. Hoje trampo pra uma fintech americana, ganho em dolar, de pijama."</div>
+        </div>
+        <div class="test-item">
+          <div class="test-header">
+            <img class="test-avatar" src="https://randomuser.me/api/portraits/women/56.jpg" alt="Larissa">
+            <div class="test-info">
+              <div class="name">Larissa Costa</div>
+              <div class="city">Fortaleza - CE, 27 anos</div>
+            </div>
+          </div>
+          <div class="test-text">"Comecei como assistente virtual por uma vaga que vi aqui. Em 6 meses virei social media de duas empresas gringas. Renda triplicou. Indico pra todo mundo que quer sair do 8 as 18."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Duvidas comuns</h2>
+      <div class="faq-item">
+        <div class="q">Como recebo as vagas?</div>
+        <div class="a">Voce entra no nosso canal privado do Telegram. Toda manha a vaga do dia e postada automaticamente.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">Posso cancelar?</div>
+        <div class="a">Sim, quando quiser. Sem multa, sem burocracia. Seu acesso ao canal continua ate o fim do periodo pago.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">E pra quem nao tem experiencia?</div>
+        <div class="a">Sim. As vagas variam de junior a senior. Muitas nao pedem experiencia - so vontade de trabalhar home office.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">Como e o pagamento?</div>
+        <div class="a">PIX via Cakto. Seguro, rapido, e a cobranca e recorrente mensal ate voce cancelar.</div>
+      </div>
+    </div>
+
+    <div class="card price-section">
+      <div class="price-label">Acesso completo - por mes</div>
+      <div class="price">R$19,90 <small>/mes</small></div>
+      <p class="price-compare">Menos que <s>R$ 0,66/dia</s> - o preco de um cafe</p>
+      <p style="font-size:14px;color:#94a3b8;margin:4px 0 8px;">Pagamento unico via PIX • Cancele quando quiser</p>
+      <a href="https://pay.cakto.com.br/codekjj_970556" class="btn">QUERO TRABALHAR HOME OFFICE</a>
+    </div>
+
+    <div class="footer">
+      Nao somos agencia de empregos, nao contratamos, nao garantimos colocacao.<br>
+      Apenas compartilhamos vagas encontradas em fontes publicas (LinkedIn, Gupy, Indeed, sites corporativos).<br>
+      Faca sua propria pesquisa antes de se candidatar.<br><br>
+      <a href="https://pay.cakto.com.br/codekjj_970556">Clube das Vagas Home Office</a> • Feito no Brasil
+    </div>
+  </div>
+</body>
+</html>
